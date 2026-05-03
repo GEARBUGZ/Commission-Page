@@ -92,13 +92,13 @@ const pricingInfo = {
         additional: "+25%"
     },
     "Halfbody": {
-        description: `<p>A digital illustration from the head to the waist/hips. Detailed character rendering with a clean finish.</p>`,
+        description: `<p>A drawing of your character from the head to the waist/hips. Shows about 60% of your character</p>`,
         base: "€38",
         shading: "+€5",
         additional: "+50%"
     },
     "Fullbody": {
-        description: `<p>A complete digital illustration showing the entire character from head to toe. Perfect for detailed designs.</p>`,
+        description: `<p>A complete drawing of your character, usually more than 70% of the body showing.</p>`,
         base: "€48",
         shading: "+€5",
         additional: "+50%"
