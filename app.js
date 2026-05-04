@@ -151,3 +151,48 @@ window.addEventListener('click', (e) => {
         document.body.style.overflow = "auto";
     }
 });
+
+// Easter Egg Logic
+let keyBuffer = '';
+const secretWord = 'ultra';
+
+document.addEventListener('keydown', (e) => {
+    // Only track single characters to avoid modifier keys messing it up
+    if (e.key.length === 1) {
+        keyBuffer += e.key.toLowerCase();
+        
+        if (keyBuffer.length > secretWord.length) {
+            keyBuffer = keyBuffer.slice(-secretWord.length);
+        }
+        
+        if (keyBuffer === secretWord) {
+            triggerEasterEgg();
+            keyBuffer = ''; // Reset buffer
+        }
+    }
+});
+
+function triggerEasterEgg() {
+    const img = document.createElement('img');
+    img.src = 'couch.png';
+    img.style.position = 'fixed';
+    img.style.top = '0';
+    img.style.left = '0';
+    img.style.width = '100vw';
+    img.style.height = '100vh';
+    img.style.objectFit = 'fill';
+    img.style.zIndex = '999999';
+    img.style.pointerEvents = 'none';
+    
+    const audio = new Audio('vine-boom.mp3');
+    
+    document.body.appendChild(img);
+    audio.play();
+    
+    setTimeout(() => {
+        if (img.parentNode) {
+            img.remove();
+        }
+    }, 2000); // 2.0 seconds
+}
+
