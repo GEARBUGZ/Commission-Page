@@ -154,27 +154,30 @@ window.addEventListener('click', (e) => {
 
 // Easter Egg Logic
 let keyBuffer = '';
-const secretWord = 'ultra';
+const maxLen = 5; // Max length of our secret words
 
 document.addEventListener('keydown', (e) => {
     // Only track single characters to avoid modifier keys messing it up
     if (e.key.length === 1) {
         keyBuffer += e.key.toLowerCase();
         
-        if (keyBuffer.length > secretWord.length) {
-            keyBuffer = keyBuffer.slice(-secretWord.length);
+        if (keyBuffer.length > maxLen) {
+            keyBuffer = keyBuffer.slice(-maxLen);
         }
         
-        if (keyBuffer === secretWord) {
-            triggerEasterEgg();
+        if (keyBuffer.endsWith('ultra')) {
+            triggerEasterEgg('couch.png');
             keyBuffer = ''; // Reset buffer
+        } else if (keyBuffer.endsWith('chud')) {
+            triggerEasterEgg('fat.png');
+            keyBuffer = '';
         }
     }
 });
 
-function triggerEasterEgg() {
+function triggerEasterEgg(imgSrc) {
     const img = document.createElement('img');
-    img.src = 'couch.png';
+    img.src = imgSrc;
     img.style.position = 'fixed';
     img.style.top = '0';
     img.style.left = '0';

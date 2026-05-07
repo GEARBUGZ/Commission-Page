@@ -145,7 +145,8 @@ header {
 }
 
 h1 {
-    font-size: 3rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 5rem;
     color: var(--primary-pink);
     text-transform: uppercase;
     text-shadow: 2px 2px #000, 4px 4px var(--accent-pink);
@@ -459,6 +460,9 @@ h2 {
         border-left: none;
         border-top: 2px solid var(--primary-pink);
     }
+    .modal-img-container img {
+        max-height: 45vh;
+    }
 }
 
 /* Buttons */
@@ -480,14 +484,28 @@ h2 {
 }
 
 /* TOS */
+.tos-container {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+    margin-bottom: 25px;
+}
+
+.tos-box {
+    flex: 1;
+    border: 1px dashed var(--primary-pink);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+}
+
 .tos-list {
     list-style: none;
 }
 
 .tos-list li {
-    margin-bottom: 15px;
     padding-left: 20px;
     position: relative;
+    margin-bottom: 20px;
 }
 
 .tos-list li::before {
@@ -505,6 +523,10 @@ h2 {
     
     .gallery {
         grid-template-columns: 1fr;
+    }
+
+    .tos-container {
+        flex-direction: column;
     }
 }
 
