@@ -154,7 +154,7 @@ window.addEventListener('click', (e) => {
 
 // Easter Egg Logic
 let keyBuffer = '';
-const maxLen = 5; // Max length of our secret words
+const maxLen = 10; // Max length of our secret words
 
 document.addEventListener('keydown', (e) => {
     // Only track single characters to avoid modifier keys messing it up
@@ -170,6 +170,9 @@ document.addEventListener('keydown', (e) => {
             keyBuffer = ''; // Reset buffer
         } else if (keyBuffer.endsWith('chud')) {
             triggerEasterEgg('fat.png');
+            keyBuffer = '';
+        } else if (keyBuffer.endsWith('kyominion')) {
+            triggerEasterEgg('tch.PNG');
             keyBuffer = '';
         }
     }
