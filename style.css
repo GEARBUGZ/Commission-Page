@@ -350,6 +350,8 @@ h2 {
     border: 2px solid var(--primary-pink);
     position: relative;
     box-shadow: 0 0 30px var(--primary-pink);
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .modal-img-container {
