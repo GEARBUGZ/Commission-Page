@@ -455,6 +455,7 @@ h2 {
 @media (max-width: 800px) {
     .modal-content {
         flex-direction: column;
+        width: 80%;
     }
     .modal-info-panel {
         border-left: none;
